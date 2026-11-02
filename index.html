@@ -3,25 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Circuiti Combinatori e Sequenziali</title>
+  <title>Sito TPS - Circuiti Digitali</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Circuiti Combinatori e Sequenziali</h1>
-    <p>TPS - Progetto didattico</p>
+  <header class="header">
+    <h1>Architettura dei Sistemi Digitali</h1>
+    <p>Progetto scolastico di TPS: Circuiti Combinatori e Sequenziali</p>
   </header>
 
-  <main>
-    <section class="card">
-      <h2>Benvenuti nel mio sito</h2>
-      <p>Questo sito raccoglie la documentazione sui circuiti digitali.</p>
+  <nav class="nav">
+    <a href="#full-adder">Full Adder</a>
+    <a href="#latch-sr">Latch SR</a>
+  </nav>
+
+  <main class="main-container">
+    
+    <!-- SEZIONE FULL ADDER -->
+    <section id="full-adder" class="card">
+      <div class="card-header">
+        <span class="tag combinatorial">Combinatorio</span>
+        <h2>Full Adder (Sommatore Completo)</h2>
+      </div>
+      <p>
+        Un <strong>Full Adder</strong> è un circuito combinatorio progettato per sommare tre bit in ingresso: due bit di dati (A e B) e un eventuale riporto proveniente da uno stadio precedente (C<sub>in</sub>). Restituisce in uscita il valore della somma (S) e il riporto generato (C<sub>out</sub>).
+      </p>
+
+      <h3>Tabella della Verità</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>A</th>
+              <th>B</th>
+              <th>C<sub>in</sub></th>
+              <th>Somma (S)</th>
+              <th>C<sub>out</sub></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>0</td><td>0</td><td><strong>0</strong></td><td>0</td></tr>
+            <tr><td>0</td><td>0</td><td>1</td><td><strong>1</strong></td><td>0</td></tr>
+            <tr><td>0</td><td>1</td><td>0</td><td><strong>1</strong></td><td>0</td></tr>
+            <tr><td>0</td><td>1</td><td>1</td><td><strong>0</strong></td><td>1</td></tr>
+            <tr><td>1</td><td>0</td><td>0</td><td><strong>1</strong></td><td>0</td></tr>
+            <tr><td>1</td><td>0</td><td>1</td><td><strong>0</strong></td><td>1</td></tr>
+            <tr><td>1</td><td>1</td><td>0</td><td><strong>0</strong></td><td>1</td></tr>
+            <tr><td>1</td><td>1</td><td>1</td><td><strong>1</strong></td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
+
+    <!-- SEZIONE LATCH SR -->
+    <section id="latch-sr" class="card">
+      <div class="card-header">
+        <span class="tag sequential">Sequenziale</span>
+        <h2>Latch SR (Set-Reset)</h2>
+      </div>
+      <p>
+        Il <strong>Latch SR</strong> è il blocco elementare dei circuiti sequenziali ed è dotato di memoria elementare. Le uscite dipendono non solo dagli ingressi attuali (S e R), ma anche dallo stato precedente del circuito.
+      </p>
+
+      <h3>Tabella di Funzionamento</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Set (S)</th>
+              <th>Reset (R)</th>
+              <th>Stato Uscita (Q)</th>
+              <th>Descrizione</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>0</td><td>Invariato (Q<sub>prev</sub>)</td><td>Mantenimento (Hold)</td></tr>
+            <tr><td>0</td><td>1</td><td>0</td><td>Reset (Forza a 0)</td></tr>
+            <tr><td>1</td><td>0</td><td>1</td><td>Set (Forza a 1)</td></tr>
+            <tr><td>1</td><td>1</td><td>Non valida</td><td>Condizione di errore / proibita</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <p>Realizzato per la consegna di TPS</p>
+    <p>&copy; 2026 - Progetto scolastico di TPS | Realizzato con HTML & CSS</p>
   </footer>
 
 </body>
